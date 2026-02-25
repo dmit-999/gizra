@@ -4,3 +4,10 @@
 body.path-user .region-content article {
   @apply max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-20;
 }
+
+@layer components {
+  .page-node-type-group .node-group-full a {
+    @apply font-semibold underline;
+    @apply text-blue-600 hover:text-blue-800;
+  }
+}
