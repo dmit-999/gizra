@@ -83,4 +83,32 @@ trait PeopleTeasersThemeTrait {
     return $this->buildInnerElementLayoutCentered($elements);
   }
 
+  /**
+   * Build a Person card with actions.
+   */
+  protected function buildElementPersonCard(
+    string $image_url,
+    string $alt,
+    string $name,
+    string $subtitle,
+    string $badge = 'Admin',
+    string $email_url = 'mailto:placeholder@example.com',
+    string $phone_url = 'tel:+10000000000',
+    string $email_label = 'Email',
+    string $phone_label = 'Call',
+  ): array {
+    return [
+      '#theme' => 'server_theme_element__person_card',
+      '#image_url' => $image_url,
+      '#image_alt' => $alt,
+      '#name' => $name,
+      '#subtitle' => $subtitle,
+      '#badge' => $badge,
+      '#email_url' => $email_url,
+      '#phone_url' => $phone_url,
+      '#email_label' => $email_label,
+      '#phone_label' => $phone_label,
+    ];
+  }
+
 }

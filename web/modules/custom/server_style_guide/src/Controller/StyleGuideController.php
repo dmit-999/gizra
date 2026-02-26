@@ -195,6 +195,9 @@ class StyleGuideController extends ControllerBase {
     $element = $this->getWebformElement();
     $build[] = $this->wrapElementNoContainer($element, 'Element: Webform');
 
+    $element = $this->getPersonCard();
+    $build[] = $this->wrapElementNoContainer($element, 'Person card');
+
     return $build;
   }
 
@@ -274,6 +277,26 @@ class StyleGuideController extends ControllerBase {
       $this->getRandomTitle(),
       $this->buildProcessedText('This is a directory list of awesome people'),
       $items,
+    );
+  }
+
+  /**
+   * Get Person card element.
+   *
+   * @return array
+   *   Render array.
+   */
+  protected function getPersonCard(): array {
+    return $this->buildElementPersonCard(
+      $this->getPlaceholderPersonImage(128),
+      'Jane Cooper',
+      'Jane Cooper',
+      'Paradigm Representative',
+      'Admin',
+      'mailto:placeholder@example.com',
+      'tel:+10000000000',
+      'Email',
+      'Call',
     );
   }
 
