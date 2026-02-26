@@ -1,0 +1,45 @@
+<div class="w-full max-w-[344px] h-[366px] flex flex-col rounded-lg bg-white shadow-[0_1px_3px_rgba(0,0,0,0.1),0_1px_2px_rgba(0,0,0,0.06)] overflow-hidden mx-auto">
+  <div class="w-full h-[312px] flex flex-col items-center p-8 gap-10">
+    <img
+      src="{{ image_url }}"
+      alt="{{ image_alt }}"
+      class="w-32 h-32 rounded-full object-cover"
+      loading="lazy"
+    >
+
+    <div class="w-full flex flex-col items-center gap-2">
+      <div class="w-full text-center text-sm leading-5 font-medium text-[#111827]">{{ name }}</div>
+      <div class="w-full text-center text-sm leading-5 font-normal text-[#6B7280]">{{ subtitle }}</div>
+
+      <span class="inline-flex items-center justify-center h-6 px-2 rounded-xl bg-[#D1FAE5] text-xs leading-4 font-medium text-[#065F46]">
+        {{ badge }}
+      </span>
+    </div>
+  </div>
+
+  <div class="w-full h-px bg-[#E5E7EB]"></div>
+
+  <div class="w-full h-[53px] flex items-stretch">
+    <a
+      href="{{ email_url }}"
+      class="flex-1 h-full inline-flex items-center justify-center gap-2 text-[#374151] hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-400 rounded-bl-lg"
+    >
+      <svg class="w-5 h-5 text-[#9CA3AF]" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path d="M2.5 5.75A1.75 1.75 0 0 1 4.25 4h11.5A1.75 1.75 0 0 1 17.5 5.75v8.5A1.75 1.75 0 0 1 15.75 16H4.25A1.75 1.75 0 0 1 2.5 14.25v-8.5Zm1.75-.25a.25.25 0 0 0-.25.25v.14L10 9.6l6-3.71v-.14a.25.25 0 0 0-.25-.25H4.25Zm11.75 2.16-5.61 3.47a.75.75 0 0 1-.78 0L4 7.66v6.59c0 .138.112.25.25.25h11.5a.25.25 0 0 0 .25-.25V7.66Z"/>
+      </svg>
+      <span class="text-sm leading-5 font-medium">{{ email_label }}</span>
+    </a>
+
+    <div class="w-px h-full bg-[#E5E7EB]"></div>
+
+    <a
+      href="{{ phone_url }}"
+      class="flex-1 h-full inline-flex items-center justify-center gap-2 text-[#374151] hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-400 rounded-br-lg"
+    >
+      <svg class="w-5 h-5 text-[#9CA3AF]" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path d="M2.75 4.5A1.75 1.75 0 0 1 4.5 2.75h2.1c.79 0 1.48.53 1.68 1.29l.58 2.15a1.75 1.75 0 0 1-.44 1.7l-1.09 1.09a11.03 11.03 0 0 0 3.69 3.69l1.09-1.09a1.75 1.75 0 0 1 1.7-.44l2.15.58c.76.2 1.29.89 1.29 1.68v2.1a1.75 1.75 0 0 1-1.75 1.75h-.5C8.82 17.75 2.75 11.68 2.75 4.5v-.5Z"/>
+      </svg>
+      <span class="text-sm leading-5 font-medium">{{ phone_label }}</span>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+type: module
+name: Server Helper
+description: 'Server Helper'
+package: Server
+core_version_requirement: ^10 || ^11

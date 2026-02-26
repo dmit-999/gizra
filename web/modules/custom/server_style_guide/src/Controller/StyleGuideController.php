@@ -195,6 +195,12 @@ class StyleGuideController extends ControllerBase {
     $element = $this->getWebformElement();
     $build[] = $this->wrapElementNoContainer($element, 'Element: Webform');
 
+    $element = $this->getPersonCard();
+    $build[] = $this->wrapElementNoContainer($element, 'Person card');
+
+    $element = $this->getPersonCardsGrid();
+    $build[] = $this->wrapElementNoContainer($element, 'Person card (grid)');
+
     return $build;
   }
 
@@ -275,6 +281,65 @@ class StyleGuideController extends ControllerBase {
       $this->buildProcessedText('This is a directory list of awesome people'),
       $items,
     );
+  }
+
+  /**
+   * Get Person card element.
+   *
+   * @return array
+   *   Render array.
+   */
+  protected function getPersonCard(): array {
+    return $this->buildElementPersonCard(
+      $this->getPlaceholderPersonImage(128),
+      'Jane Cooper',
+      'Jane Cooper',
+      'Paradigm Representative',
+      'Admin',
+      'mailto:placeholder@example.com',
+      'tel:+10000000000',
+      'Email',
+      'Call',
+    );
+  }
+
+  /**
+   * Get Person cards grid element.
+   *
+   * @return array
+   *   Render array.
+   */
+  protected function getPersonCardsGrid(): array {
+    $items = [];
+
+    $names = [
+      'Jane Cooper',
+      'Alex Morgan',
+      'Chris Evans',
+      'Taylor Reed',
+      'Sam Wilson',
+      'Morgan Lee',
+      'Jamie Fox',
+      'Jordan Blake',
+      'Casey Hart',
+      'Riley Stone',
+    ];
+
+    foreach ($names as $name) {
+      $items[] = $this->buildElementPersonCard(
+        $this->getPlaceholderPersonImage(128),
+        $name,
+        $name,
+        'Paradigm Representative',
+        'Admin',
+        'mailto:placeholder@example.com',
+        'tel:+10000000000',
+        'Email',
+        'Call',
+      );
+    }
+
+    return $this->buildCards($items);
   }
 
   /**
