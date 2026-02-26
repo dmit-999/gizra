@@ -1,6 +1,9 @@
 ARG BASE_IMAGE
 FROM $BASE_IMAGE
 
+# Fix the expired SURY GPG key before running apt-get update
+RUN curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg
+
 # For being able to optimize images as part of theme compilation, we install
 # extra tools here - in a non-interactive way, also trying to avoid extra
 # packages that would increase the image size.
